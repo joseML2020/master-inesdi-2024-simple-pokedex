@@ -39,7 +39,6 @@ export function usePokemonList({ limit }: UsePokemonOpts = { limit: 42 }) {
         const response = await fetch(API_ENDPOINT_TYPES);
         const data = await response.json();
         setTypes(data.results);
-        console.log(2,data.results);
       } catch (error) {
         console.error("Error fetching all types:", error);
       } finally {
