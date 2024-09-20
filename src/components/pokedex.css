@@ -141,3 +141,23 @@
 .ready--slow {
   transition: filter 500ms linear 800ms;
 }
+
+.name-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pokedex-paent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; 
+}

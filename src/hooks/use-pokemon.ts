@@ -1,5 +1,6 @@
 import type { Pokemon, PokemonUri } from "models";
 import { useEffect, useState } from "react";
+import { extractTypesWithImages } from "utils/data";
 
 const cache = new Map<string, Pokemon>();
 
@@ -12,6 +13,10 @@ export function usePokemon(pokemonUri: PokemonUri) {
       try {
         const response = await fetch(pokemonUri.url);
         const data = await response.json();
+
+        const updatedTypes = extractTypesWithImages(data.types);
+        data.types = updatedTypes;
+
         cache.set(pokemonUri.url, data);
         setPokemon(data);
       } catch (error) {
@@ -24,7 +29,12 @@ export function usePokemon(pokemonUri: PokemonUri) {
     if (!pokemonUri) return;
 
     if (cache.has(pokemonUri.url)) {
-      setPokemon(cache.get(pokemonUri.url));
+      const cachedPokemon = cache.get(pokemonUri.url);
+      if (cachedPokemon) {
+        const cachedTypes = extractTypesWithImages(cachedPokemon.types);
+        cachedPokemon.types = cachedTypes;
+        setPokemon(cachedPokemon);
+      }
       setIsLoading(false);
     } else {
       fetchPokemonData();

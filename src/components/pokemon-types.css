@@ -1,0 +1,21 @@
+.pokemon-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 100%; 
+  overflow: hidden; 
+}
+
+.pokemon-type {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 5px;
+}
+
+.pokemon-type-image {
+  width: 54px;
+  margin-right: 4px;
+}
+

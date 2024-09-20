@@ -1,0 +1,31 @@
+.team-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 510px;;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-red);
+    border: 4px solid var(--darker-red);
+    border-radius: 10%;
+    padding: 1rem;
+
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: auto;
+  }
+
+  .name {
+    text-transform: capitalize;
+  }
+  

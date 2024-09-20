@@ -5,7 +5,7 @@ let timeout: number = 0;
 export function useTextTransition(duration = 1000) {
   const [ready, setReady] = useState(false);
 
-  const resetTransition = useCallback(() => {
+  const resetTransition = useCallback((timeout: number = 0) => {
     timeout && window.clearTimeout(timeout);
     setReady(false);
   }, []);
